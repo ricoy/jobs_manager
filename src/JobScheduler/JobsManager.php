@@ -7,10 +7,15 @@ namespace JobScheduler;
 class JobsManager {
 
     private $jobs = [];
-
+    
     public function adicionarJob(Job $job)
     {
+        $this->jobs[] = $job;
+    }
 
+    public function retornarTodosJobs()
+    {
+        return $this->jobs;
     }
     
     public function retornarJobsPorJanelaExecucao($dataHoraInicio, $dataHoraFim)
