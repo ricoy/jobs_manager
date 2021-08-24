@@ -2,7 +2,7 @@
     "name": "ricoy/job_scheduler",
     "autoload": {
         "psr-4": {
-            "Ricoy\\JobSchedulerPhp\\": "src/"
+            "JobScheduler\\": "src/JobScheduler"
         }
     },
     "authors": [
