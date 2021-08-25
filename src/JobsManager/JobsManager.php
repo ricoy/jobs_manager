@@ -5,6 +5,9 @@ namespace JobsManager;
 use JobsManager\Job;
 use JobsManager\iStorage;
 
+/**
+ * Classe responsavel pelo gerenciamento de Jobs
+ */
 class JobsManager {
 
     private $dataHoraInicio;
@@ -22,18 +25,13 @@ class JobsManager {
         return $this->storage->salvarJob($job);
     }
 
-    public function retornarTodosJobs()
-    {
-        return $this->storage->retornarJobs();
-    }
-
     private function retornarJobsPorPeriodo()
     {
         
         $dataHoraInicio = $this->dataHoraInicio; 
         $dataHoraFim = $this->dataHoraFim;
 
-        $listaJobs = $this->retornarTodosJobs();
+        $listaJobs = $this->storage->retornarJobs();
 
         $filtrarPeriodo = function($job) use ($dataHoraInicio, $dataHoraFim) {
             if (strtotime($job->getDataMaximaConclusao()) >= strtotime($dataHoraInicio) && 
@@ -71,7 +69,7 @@ class JobsManager {
         // ordeno os jobs por prioridade, ou seja, por menor data maxima de conclusao
         asort($dataMaximaConclusaoJobs);
 
-        // enquanto nao tiver alocado todos os jobs crio novas sequencias
+        // enquanto nao tiver alocado  os jobs crio novas sequencias
         while (!empty($dataMaximaConclusaoJobs)) {
             $sequenciaJob = [];
             $tempoTotalSequencia = 0;
