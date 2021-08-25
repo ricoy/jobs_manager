@@ -3,29 +3,28 @@
 namespace JobsManager;
 
 use JobsManager\Job;
+use JobsManager\iStorage;
 
 class JobsManager {
 
-    private $jobs = [];
     private $dataHoraInicio;
     private $dataHoraFim;
 
     const TEMPO_MAXIMO_SEQUENCIA_JOBS = 8;
 
-    public function __construct($dataHoraInicio, $dataHoraFim)
+    public function __construct(iStorage $storage)
     {
-        $this->dataHoraInicio = $dataHoraInicio;
-        $this->dataHoraFim = $dataHoraFim;
+        $this->storage = $storage;
     }
 
     public function adicionarJob(Job $job)
     {
-        $this->jobs[] = $job;
+        $this->storage->salvarJob($job);
     }
 
     public function retornarTodosJobs()
     {
-        return $this->jobs;
+        return $this->storage->retornarJobs();
     }
 
     private function retornarJobsPorPeriodo()
@@ -48,8 +47,11 @@ class JobsManager {
         return array_filter($listaJobs, $filtrarPeriodo);
     }
 
-    public function retornarJobsEmOrdemDeExecucao()
+    public function retornarJobsEmOrdemDeExecucao($dataHoraInicio, $dataHoraFim)
     {
+        $this->dataHoraInicio = $dataHoraInicio;
+        $this->dataHoraFim = $dataHoraFim;
+        
         $jobsDoPeriodo = $this->retornarJobsPorPeriodo();
 
         $tempoEstimadoJobs = [];
@@ -86,20 +88,5 @@ class JobsManager {
         }
        
         return $listaSequenciaJobs;
-    }
-
-    public static function executarJobs(array $jobs, $dataHoraInicio, $dataHoraFim)
-    {
-        $manager = new self($dataHoraInicio, $dataHoraFim);
-        foreach ($jobs as $job) {
-            $manager->adicionarJob($job);
-        }
-
-        $listaSequenciaJobs = $manager->retornarJobsEmOrdemDeExecucao();
-        foreach ($listaSequenciaJobs as $sequencia => $jobs) {
-            $strJobs = implode(', ', $jobs);
-            
-            echo "Executando sequencia nº{$sequencia} :: Jobs: [{$strJobs}]" . PHP_EOL;
-        }
     }
 }
