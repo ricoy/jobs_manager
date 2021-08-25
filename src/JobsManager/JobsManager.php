@@ -19,7 +19,7 @@ class JobsManager {
 
     public function adicionarJob(Job $job)
     {
-        $this->storage->salvarJob($job);
+        return $this->storage->salvarJob($job);
     }
 
     public function retornarTodosJobs()
@@ -49,6 +49,10 @@ class JobsManager {
 
     public function retornarJobsEmOrdemDeExecucao($dataHoraInicio, $dataHoraFim)
     {
+        if (strtotime($dataHoraInicio) === false || strtotime($dataHoraFim) === false) {
+            throw new \InvalidArgumentException("O formato de data/hora deve ser yyyy-mm-ddThh:mm:ss");
+        }
+        
         $this->dataHoraInicio = $dataHoraInicio;
         $this->dataHoraFim = $dataHoraFim;
         
