@@ -8,4 +8,5 @@ interface iStorage
 {
     public function salvarJob(Job $job);
     public function retornarJobs();
+    public function excluirJobs();
 }
