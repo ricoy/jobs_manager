@@ -16,7 +16,7 @@ $app->get('/listar-fila-jobs/{dataHoraInicio}/{dataHoraFim}', function (Request 
     try {
         $jobStorageFile = new JobStorageFile(__DIR__ . '/job.txt');
         $manager = new JobsManager($jobStorageFile);
-        $jobs = $manager->retornarJobsEmOrdemDeExecucao(str_replace(' ', '', $args['dataHoraInicio']), str_replace(' ', '', $args['dataHoraFim']));
+        $jobs = $manager->retornarFilaExecucaoJob(str_replace(' ', '', $args['dataHoraInicio']), str_replace(' ', '', $args['dataHoraFim']));
 
         return $response->withJson($jobs, 200);
     } catch (\Exception $e) {

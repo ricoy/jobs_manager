@@ -47,7 +47,7 @@ class JobsManager {
         return array_filter($listaJobs, $filtrarPeriodo);
     }
 
-    public function retornarJobsEmOrdemDeExecucao($dataHoraInicio, $dataHoraFim)
+    public function retornarFilaExecucaoJob($dataHoraInicio, $dataHoraFim)
     {
         if (strtotime($dataHoraInicio) === false || strtotime($dataHoraFim) === false) {
             throw new \InvalidArgumentException("O formato de data/hora deve ser yyyy-mm-ddThh:mm:ss");
