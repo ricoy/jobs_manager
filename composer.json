@@ -1,8 +1,8 @@
 {
-    "name": "ricoy/job_scheduler",
+    "name": "ricoy/jobs_manager",
     "autoload": {
         "psr-4": {
-            "JobScheduler\\": "src/JobScheduler"
+            "JobsManager\\": "src/JobsManager"
         }
     },
     "authors": [

@@ -2,8 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 
-use JobScheduler\Job;
-use JobScheduler\JobsManager;
+use JobsManager\Job;
+use JobsManager\JobsManager;
 
 final class JobsManagerTest extends TestCase
 {
@@ -15,7 +15,7 @@ final class JobsManagerTest extends TestCase
         $jobsManager->adicionarJob($job);
 
         $jobs = $jobsManager->retornarTodosJobs();
-        
+
         $this->assertIsArray($jobs);
         $this->assertContainsOnlyInstancesOf(Job::class, $jobs);
         $this->assertCount(1, $jobs);

@@ -1,6 +1,6 @@
 <?php
 
-namespace JobScheduler;
+namespace JobsManager;
 
 class Job {
 

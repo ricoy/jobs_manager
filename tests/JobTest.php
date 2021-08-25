@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use JobScheduler\Job;
+use JobsManager\Job;
 
 final class JobTest extends TestCase
 {

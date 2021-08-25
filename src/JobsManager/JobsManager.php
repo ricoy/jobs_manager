@@ -1,8 +1,8 @@
 <?php
 
-use JobScheduler\Job;
+namespace JobsManager;
 
-namespace JobScheduler;
+use JobsManager\Job;
 
 class JobsManager {
 
