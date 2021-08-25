@@ -16,6 +16,16 @@ class Job {
         $this->tempoEstimado = $tempoEstimado;
     }
 
+    public function toArray()
+    {
+        return [
+            'id' => $this->id, 
+            'descricao' => $this->descricao,
+            'dataMaximaConclusao' => $this->dataMaximaConclusao,
+            'tempoEstimado' => $this->tempoEstimado
+        ];
+    }
+
     public function getId()
     {
         return $this->id;
