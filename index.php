@@ -9,7 +9,15 @@ require_once  __DIR__ . '/vendor/autoload.php';
 
 date_default_timezone_set('America/Sao_Paulo');
 
-$app = new \Slim\App();
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+
+$container = new \Slim\Container($configuration);
+
+$app = new \Slim\App($container);
 
 $app->get('/listar-fila-jobs/{dataHoraInicio}/{dataHoraFim}', function (Request $request, Response $response, array $args) {
 
@@ -40,7 +48,7 @@ $app->post('/adicionar-job', function (Request $request, Response $response) {
 });
 
 
-$app->post('/excluir-jobs', function (Response $response) {
+$app->post('/excluir-jobs', function (Request $request, Response $response) {
     
     try {
         $jobStorageFile = new JobStorageFile(__DIR__ . '/job.txt');
