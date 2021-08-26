@@ -1,7 +1,7 @@
 
 # Jobs Manager
 
-Este projeto é uma prova de conceito que tem o objetivo de demonstrar o conhecimento em programação, recursos da linguagem PHP e lógica de programação.
+Este projeto é uma prova de conceito que tem o objetivo de demonstrar o conhecimento em programação, recursos da linguagem PHP e lógica de programação. Foram utilizados o [Slim Framework](https://www.slimframework.com/), que é um micro framework para a criação de APIs, o [PHPUnit](https://phpunit.de/), que é um framework de criação de testes unitários e o [Composer](https://getcomposer.org/), que é responsável pela gestão de dependências de pacotes. Além disso, foi utilizada a versão 7.4 do PHP nesta prova de conceito. Maiores informações sobre as versões das bibliotecas podem ser consultadas no composer.json do repositório.
 
 **Desafio: Criar algoritmo que retorne um conjunto de arrays com as seguintes características:**
 
