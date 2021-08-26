@@ -91,7 +91,7 @@ $app->post('/excluir-jobs', function (Request $request, Response $response) {
         $jobStorageFile = new JobStorageFile(__DIR__ . '/job.txt');
         $jobStorageFile->excluirJobs();
 
-        $response->withJson(['message' => 'Jobs exluidos com sucesso!'], 200);
+        $response->withJson(['message' => 'Jobs excluídos com sucesso!'], 200);
 
     } catch (\Exception $e) {
         $response->withJson(['erro' => $e->getMessage()], 500);
