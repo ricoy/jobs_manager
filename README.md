@@ -67,3 +67,9 @@ Exemplo retorno:
 
 ![image](https://user-images.githubusercontent.com/1377278/130885910-7cd9f7df-7fb5-4c30-8679-d46fd86ab80c.png)
 
+**Postman**  
+Na raiz do repositório há uma collection (JobsManager.postman_collection.json) do [Postman](https://www.postman.com/) que pode ser utilizada para realizar testes desta API. As informações sobre instalação e utilização desta ferramenta podem ser consultadas no site oficial.
+![image](https://user-images.githubusercontent.com/1377278/130887804-07f276e7-a063-4578-8eb9-4505193c1168.png)
+
+
+
