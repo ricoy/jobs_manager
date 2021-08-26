@@ -51,7 +51,7 @@ curl --location --request POST 'http://localhost:8081/excluir-jobs'
 </code>  
 Exemplo retorno:  
 <code>
-{"message":"Jobs exluidos com sucesso!"}
+{"message":"Jobs excluidos com sucesso!"}
 </code> 
 
 **Passos para instalação e configuração do projeto (Obs: É necessário ter o Docker instalado)**
