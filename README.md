@@ -11,9 +11,9 @@ Este projeto é uma prova de conceito que tem o objetivo de demonstrar o conheci
 - Todos os Jobs devem ser executados dentro da janela de execução (data início e fim).
 
 **Solução:**
-Foi criado uma api de serviços com as seguintes operações:  
+Para a resolução do problema, foi criada uma api de serviços com as seguintes operações:  
 
-**/adicionar-job (POST):** permite agendar a execução de um Job.  
+**/adicionar-job (POST):** permite incluir um agendamento de execução de um Job.  
 Exemplo de uso:  
 <code>
 curl --location --request POST 'http://localhost:8081/adicionar-job' \
@@ -31,7 +31,7 @@ Exemplo de retorno:
 08:00:00","tempoEstimado":6}
 </code>    
 
-**/listar-fila-jobs/{dataHoraInicio}/{dataHoraFim} (GET):** Retorna uma lista com as sequências de jobs organizadas em janelas de execução de 8hs. Essa lista é filtrada de acordo com a data de início e fim informados como parâmetro. As datas devem ter o formato: YYYY-MM-DDTHH:MM:SS. Exemplo de uso:  
+**/listar-fila-jobs/{dataHoraInicio}/{dataHoraFim} (GET):** Retorna uma lista com as sequências de jobs organizadas em janelas de execução de 8hs de acordo com a proposta do desafio. Essa lista é filtrada de acordo com a data de início e fim informados como parâmetro. As datas devem ter o formato: YYYY-MM-DDTHH:MM:SS. Exemplo de uso:  
 <code>
 curl --location --request GET 'http://localhost:8081/listar-fila-jobs/2019-11-10T12:00:00/2019-11-11T12:00:00'
 </code>  
