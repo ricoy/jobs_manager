@@ -59,7 +59,7 @@ Exemplo retorno:
 <code>git clone https://github.com/ricoy/jobs_manager.git</code>
 - Acessar o diretório da aplicação no local em que foi realizado o clone do repositório:  
 <code>cd jobs_manager/</code>
-- Executar a imagem docker do composer para instalação das dependências do projeto:**[Composer](https://getcomposer.org/)**:  
+- Executar a imagem docker do composer para instalação das dependências do projeto:    
 <code>docker run --rm --interactive --tty --volume $PWD:/app composer install</code>
 - Executar a imagem docker do php-cli para inicializar a aplicação em modo dev:  
 <code>docker run --rm -p 8081:8000 -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.4-cli php -S 0.0.0.0:8000</code>
