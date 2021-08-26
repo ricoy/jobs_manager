@@ -14,6 +14,10 @@ class JobStorageFile implements iStorage {
         if (!is_writable(dirname($filePath))) {
             throw new \InvalidArgumentException("O local de armazenamento de jobs {$filePath} não possui permissões de escrita.");
         }
+
+        if (!file_exists($filePath)) {
+            file_put_contents($filePath, json_encode([]));
+        }
         
         $this->filePath = $filePath;
     }
