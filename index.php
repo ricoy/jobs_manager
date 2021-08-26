@@ -47,7 +47,7 @@ $app->get('/', function (Request $request, Response $response) {
             <code><pre>{$resultTests}</pre></code>
         </div>
         
-        <a href="#" class="btn btn-primary my-2">Acessar GitHub</a>
+        <a href="https://github.com/ricoy/jobs_manager" class="btn btn-primary my-2">Acessar GitHub</a>
     </section>
     
   </body>
