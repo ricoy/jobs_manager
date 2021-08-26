@@ -28,6 +28,10 @@ class JobStorageFile implements iStorage {
 
         $listaJobs = [];
         foreach($jobsCadastrados as $jobCorrente) {
+            if ($job->getId() == $jobCorrente->getId()) {
+                throw new \Exception("O identificador do job já existe.");
+            }
+
             $listaJobs[] = $jobCorrente->toArray();
         }
 
