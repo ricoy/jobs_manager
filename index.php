@@ -29,13 +29,13 @@ $app->get('/', function (Request $request, Response $response) {
 <html lang="pt">
   <head>
     <meta charset="utf-8">
-    <title>Scheduling Job</title>
+    <title>Jobs Manager</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 </head>
   <body>
     <section class="py-5 jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Scheduling Job</h1>
+            <h1 class="jumbotron-heading">Jobs Manager</h1>
             <h6>Desafio: Criar algoritmo que retorne um conjunto de arrays com as seguintes características:</h6>
             <ul class="list-unstyled">
                 <li>Cada array do conjunto representa uma lista de Jobs a serem executados em sequência;</li>
